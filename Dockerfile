@@ -10,4 +10,4 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["gunicorn", "app:app"]
+CMD ["gunicorn", "--workers=1", "--threads=2", "app:app"]
