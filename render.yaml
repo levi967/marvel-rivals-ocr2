@@ -3,5 +3,7 @@ services:
     name: marvel-rivals-ocr
     env: python
     plan: free
-    buildCommand: "apt-get update && apt-get install -y tesseract-ocr"
-    startCommand: "gunicorn app:app"
+    buildCommand: |
+      apt-get update
+      apt-get install -y tesseract-ocr
+    startCommand: gunicorn app:app
